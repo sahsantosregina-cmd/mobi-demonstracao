@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consulta Voll | MOBI</title>
+
+    <link rel="stylesheet" href="detalhe.css">
+</head>
+
+<body class="pagina-voll">
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="topo-voll">
+
+        <div class="logo-voll">
+            MOBI
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main class="voll-container">
+
+
+        <!-- =================================================
+             TÍTULO
+        ================================================== -->
+
+        <section class="voll-titulo">
+
+            <span class="voll-tag">
+                MOBI • Consulta de cadastro
+            </span>
+
+            <h1>
+                Localize seu cadastro
+            </h1>
+
+            <p>
+                Verifique se a pessoa já possui cadastro na Voll
+                antes de abrir um chamado no TopDesk.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             CARD DE CONSULTA
+        ================================================== -->
+
+        <section class="voll-card">
+
+            <label for="busca">
+                CPF ou nome da pessoa
+            </label>
+
+            <div class="voll-busca">
+
+                <input
+                    type="text"
+                    id="busca"
+                    placeholder="Digite o CPF ou nome"
+                >
+
+                <button
+                    type="button"
+                    onclick="consultar()"
+                >
+                    Consultar
+                </button>
+
+            </div>
+
+            <p class="voll-ajuda">
+                Faça uma consulta prévia para verificar se já existe
+                um cadastro ativo.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             RESULTADO
+        ================================================== -->
+
+        <section
+            id="resultado"
+            class="voll-resultado"
+        ></section>
+
+
+        <!-- =================================================
+             VOLTAR
+        ================================================== -->
+
+        <a href="front.html" class="voltar-mobi">
+            ← Voltar para o MOBI
+        </a>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT DA CONSULTA
+    ====================================================== -->
+
+    <script>
+
+        function consultar() {
+
+            const busca =
+                document.getElementById("busca").value.trim();
+
+            const resultado =
+                document.getElementById("resultado");
+
+
+            /* =================================================
+               CAMPO VAZIO
+            ================================================= */
+
+            if (busca === "") {
+
+                resultado.innerHTML = `
+                    <div class="voll-alerta">
+
+                        <span class="voll-alerta-icone">
+                            ⚠️
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Informe um CPF ou nome
+                            </strong>
+
+                            <p>
+                                Digite uma informação para realizar
+                                a consulta.
+                            </p>
+
+                        </div>
+
+                    </div>
+                `;
+
+                return;
+            }
+
+
+            /* =================================================
+               CADASTRO ENCONTRADO
+            ================================================= */
+
+            if (busca === "36908094871") {
+
+                resultado.innerHTML = `
+
+                    <div class="voll-sucesso">
+
+                        <div class="voll-resultado-icone">
+                            ✓
+                        </div>
+
+                        <h3>
+                            Cadastro encontrado
+                        </h3>
+
+
+                        <div class="voll-dados">
+
+                            <p>
+                                <strong>CPF:</strong>
+                                ${busca}
+                            </p>
+
+                            <p>
+                                <strong>Status:</strong>
+
+                                <span class="status-ativo">
+                                    Cadastro ativo
+                                </span>
+                            </p>
+
+                            <p>
+                                <strong>Usuário:</strong>
+                                Sara Regina dos Santos
+                            </p>
+
+                        </div>
+
+
+                        <div class="voll-mensagem-sucesso">
+
+                            Este usuário já possui cadastro na Voll.
+
+                        </div>
+
+
+                        <div class="voll-mensagem-atencao">
+
+                            Não é necessário abrir um novo chamado
+                            no TopDesk.
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+
+
+            /* =================================================
+               CADASTRO NÃO ENCONTRADO
+            ================================================= */
+
+            else {
+
+                resultado.innerHTML = `
+
+                    <div class="voll-sucesso voll-nao-encontrado">
+
+                        <div class="voll-resultado-icone vermelho">
+                            !
+                        </div>
+
+                        <h3>
+                            Usuário não cadastrado
+                        </h3>
+
+                        <p class="voll-instrucao">
+
+                            Realize seu cadastro na Voll.
+                            Basta abrir um chamado no TopDesk.
+
+                        </p>
+
+
+                        <a
+                            href="COLE_AQUI_O_LINK_DO_TOPDESK"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="botao-topdesk"
+                        >
+                            Abrir chamado no TopDesk →
+                        </a>
+
+                    </div>
+
+                `;
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

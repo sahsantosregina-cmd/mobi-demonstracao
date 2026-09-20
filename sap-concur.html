@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MOBI | SAP Concur</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #F7F9F7;
+            color: #26352B;
+        }
+
+
+        /* ========================================
+           CABEÇALHO MOBI
+        ======================================== */
+
+        .topo {
+            width: 100%;
+
+            background: linear-gradient(
+                135deg,
+                #2B8A49 0%,
+                #559A41 100%
+            );
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow:
+                0 3px 12px rgba(0, 0, 0, 0.15);
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 27px;
+            font-weight: bold;
+
+            color: #FCD341;
+        }
+
+
+        .logo-mobi {
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+        }
+
+
+        .voltar {
+            color: #FFFFFF;
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .voltar:hover {
+            color: #FCD341;
+        }
+
+
+        /* ========================================
+           PÁGINA
+        ======================================== */
+
+        .pagina {
+            max-width: 1000px;
+            margin: 0 auto;
+
+            padding: 55px 25px 70px;
+        }
+
+
+        /* ========================================
+           CABEÇALHO SAP CONCUR
+        ======================================== */
+
+        .cabecalho {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 40px;
+        }
+
+
+        .tag {
+            display: inline-block;
+
+            background: #EAF3E5;
+            color: #2B8A49;
+
+            padding: 7px 15px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            letter-spacing: 1px;
+        }
+
+
+        h1 {
+            font-size: 34px;
+
+            margin: 18px 0 12px;
+
+            color: #2B8A49;
+        }
+
+
+        .descricao {
+            color: #5C5F61;
+
+            font-size: 16px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ========================================
+           TÍTULOS DAS SEÇÕES
+        ======================================== */
+
+        .subtitulo {
+            text-align: center;
+
+            margin: 40px 0 10px;
+
+            font-size: 21px;
+
+            color: #2B8A49;
+        }
+
+
+        .subdescricao {
+            text-align: center;
+
+            color: #5C5F61;
+
+            font-size: 15px;
+
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+
+        /* ========================================
+           CARDS DE DESPESAS
+        ======================================== */
+
+        .despesas {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 16px;
+        }
+
+
+        .despesa {
+            background: #FFFFFF;
+
+            border: 1px solid #E2E8E2;
+
+            border-radius: 14px;
+
+            padding: 18px 12px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 18px rgba(43, 138, 73, 0.08);
+
+            transition: all 0.2s ease;
+
+            min-height: 105px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .despesa:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 20px rgba(43, 138, 73, 0.14);
+        }
+
+
+        /* ÍCONES DAS DESPESAS — MENOR */
+
+        .icone {
+            font-size: 24px;
+
+            line-height: 1;
+
+            margin-bottom: 8px;
+        }
+
+
+        .despesa strong {
+            font-size: 13px;
+
+            line-height: 1.35;
+
+            color: #26352B;
+        }
+
+
+        /* ========================================
+           DIVISOR
+        ======================================== */
+
+        .divisor {
+            width: 80px;
+
+            height: 4px;
+
+            background: #FCD341;
+
+            border-radius: 10px;
+
+            margin: 45px auto 35px;
+        }
+
+
+        /* ========================================
+           CHAMADOS
+        ======================================== */
+
+        .chamados {
+            margin-top: 20px;
+        }
+
+
+        .cards-chamados {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .chamado {
+            background: #FFFFFF;
+
+            border: 1px solid #E2E8E2;
+
+            border-radius: 18px;
+
+            padding: 28px 24px;
+
+            box-shadow:
+                0 5px 20px rgba(43, 138, 73, 0.10);
+
+            display: flex;
+
+            flex-direction: column;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .chamado:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 12px 30px rgba(43, 138, 73, 0.18);
+        }
+
+
+        .chamado-icone {
+            font-size: 32px;
+
+            margin-bottom: 16px;
+        }
+
+
+        .chamado h2 {
+            color: #2B8A49;
+
+            font-size: 19px;
+
+            margin: 0 0 12px;
+        }
+
+
+        .chamado p {
+            color: #5C5F61;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin: 0 0 25px;
+        }
+
+
+        /* ========================================
+           BOTÃO TOPDESK
+        ======================================== */
+
+        .botao-topdesk {
+            display: inline-block;
+
+            margin-top: auto;
+
+            width: fit-content;
+
+            padding: 11px 18px;
+
+            background: #FCD341;
+
+            color: #2B8A49;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            border-radius: 25px;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .botao-topdesk:hover {
+            background: #e5be2e;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* ========================================
+           ORIENTAÇÕES
+        ======================================== */
+
+        .orientacoes {
+            margin-top: 55px;
+        }
+
+
+        .orientacoes-titulo {
+            text-align: center;
+
+            margin-bottom: 28px;
+        }
+
+
+        .orientacoes-titulo h2 {
+            color: #2B8A49;
+
+            font-size: 25px;
+
+            margin: 15px 0 8px;
+        }
+
+
+        .orientacoes-titulo p {
+            color: #5C5F61;
+
+            font-size: 15px;
+
+            margin: 0;
+        }
+
+
+        /* ========================================
+           ACCORDION
+        ======================================== */
+
+        .accordion {
+            background: #FFFFFF;
+
+            border: 1px solid #E2E8E2;
+
+            border-radius: 16px;
+
+            margin-bottom: 14px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 4px 15px rgba(43, 138, 73, 0.08);
+        }
+
+
+        .accordion-titulo {
+            width: 100%;
+
+            border: none;
+
+            background: #FFFFFF;
+
+            padding: 20px 24px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            cursor: pointer;
+
+            text-align: left;
+
+            color: #2B8A49;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .accordion-titulo:hover {
+            background: #F7F9F7;
+        }
+
+
+        .titulo-esquerda {
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+        }
+
+
+        .icone-orientacao {
+            font-size: 23px;
+        }
+
+
+        .seta {
+            font-size: 16px;
+
+            color: #2B8A49;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .accordion.ativo .seta {
+            transform: rotate(180deg);
+        }
+
+
+        /* ========================================
+           CONTEÚDO DO ACCORDION
+        ======================================== */
+
+        .accordion-conteudo {
+            max-height: 0;
+
+            overflow: hidden;
+
+            background: #FAFCFA;
+
+            transition:
+                max-height 0.4s ease;
+        }
+
+
+        .accordion-conteudo-inner {
+            padding: 0 24px 25px;
+
+            color: #5C5F61;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        .accordion-conteudo-inner p {
+            margin: 12px 0;
+        }
+
+
+        /* ========================================
+           DESTAQUES
+        ======================================== */
+
+        .destaque-alerta {
+            background: #FFF8D9;
+
+            border-left: 4px solid #FCD341;
+
+            padding: 15px 17px;
+
+            border-radius: 8px;
+
+            margin: 16px 0;
+        }
+
+
+        .destaque-info {
+            background: #EAF3E5;
+
+            border-left: 4px solid #2B8A49;
+
+            padding: 15px 17px;
+
+            border-radius: 8px;
+
+            margin: 16px 0;
+        }
+
+
+        .destaque-alerta strong,
+        .destaque-info strong {
+            color: #2B8A49;
+        }
+
+
+        /* ========================================
+           REGRAS DA SENHA
+        ======================================== */
+
+        .regras-senha {
+            margin: 12px 0;
+
+            padding-left: 22px;
+        }
+
+
+        .regras-senha li {
+            margin-bottom: 7px;
+        }
+
+
+        /* ========================================
+           PRAZOS
+        ======================================== */
+
+        .prazos {
+            margin-top: 40px;
+
+            padding: 24px 28px;
+
+            background: #EAF3E5;
+
+            border-radius: 16px;
+
+            border-left: 5px solid #FCD341;
+
+            box-shadow:
+                0 4px 15px rgba(43, 138, 73, 0.08);
+        }
+
+
+        .prazos h2 {
+            color: #2B8A49;
+
+            font-size: 18px;
+
+            margin: 0 0 14px;
+        }
+
+
+        .prazos p {
+            color: #5C5F61;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin: 7px 0;
+        }
+
+
+        .prazos strong {
+            color: #2B8A49;
+        }
+
+
+        /* ========================================
+           RESPONSIVO
+        ======================================== */
+
+        @media (max-width: 800px) {
+
+            .despesas {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .cards-chamados {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .topo {
+                padding: 18px 25px;
+            }
+
+
+            .logo {
+                font-size: 23px;
+            }
+
+
+            .logo-mobi {
+                width: 36px;
+                height: 36px;
+            }
+
+
+            .pagina {
+                padding: 40px 20px;
+            }
+
+
+            h1 {
+                font-size: 27px;
+            }
+
+
+            .despesas {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .despesa {
+                min-height: 95px;
+
+                padding: 15px 10px;
+            }
+
+
+            .icone {
+                font-size: 22px;
+            }
+
+
+            .accordion-titulo {
+                padding: 18px;
+            }
+
+
+            .accordion-conteudo-inner {
+                padding:
+                    0 18px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         CABEÇALHO MOBI
+    ======================================== -->
+
+    <header class="topo">
+
+        <div class="logo">
+
+            <!-- DESENHO ORIGINAL DO MOBI -->
+
+            <svg
+                class="logo-mobi"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <rect
+                    x="15"
+                    y="30"
+                    width="70"
+                    height="55"
+                    rx="14"
+                    fill="#F7D21E"
+                    stroke="#86B02B"
+                    stroke-width="6"
+                />
+
+                <path
+                    d="M 38 30 Q 38 14 50 14 Q 62 14 62 30"
+                    fill="none"
+                    stroke="#368768"
+                    stroke-width="6"
+                    stroke-linecap="round"
+                />
+
+                <line
+                    x1="42"
+                    y1="52"
+                    x2="58"
+                    y2="52"
+                    stroke="#368768"
+                    stroke-width="5"
+                />
+
+                <circle
+                    cx="34"
+                    cy="55"
+                    r="13"
+                    fill="#ffffff"
+                    stroke="#368768"
+                    stroke-width="5"
+                />
+
+                <circle
+                    cx="66"
+                    cy="55"
+                    r="13"
+                    fill="#ffffff"
+                    stroke="#368768"
+                    stroke-width="5"
+                />
+
+                <circle
+                    cx="30"
+                    cy="52"
+                    r="3"
+                    fill="#86B02B"
+                />
+
+                <circle
+                    cx="62"
+                    cy="52"
+                    r="3"
+                    fill="#86B02B"
+                />
+
+                <path
+                    d="M 40 72 Q 50 80 60 72"
+                    fill="none"
+                    stroke="#368768"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                />
+
+            </svg>
+
+            <span>MOBI</span>
+
+        </div>
+
+
+        <a
+            href="front.html"
+            class="voltar"
+        >
+            ← Voltar
+        </a>
+
+    </header>
+
+
+
+    <!-- ========================================
+         CONTEÚDO
+    ======================================== -->
+
+    <main class="pagina">
+
+
+        <!-- ========================================
+             CABEÇALHO
+        ======================================== -->
+
+        <div class="cabecalho">
+
+            <span class="tag">
+                SAP CONCUR
+            </span>
+
+
+            <h1>
+                Reembolso de despesas de viagem
+            </h1>
+
+
+            <p class="descricao">
+                Utilize o SAP Concur para solicitar o reembolso
+                das despesas realizadas durante sua viagem.
+            </p>
+
+        </div>
+
+
+
+        <!-- ========================================
+             DESPESAS
+        ======================================== -->
+
+        <h2 class="subtitulo">
+            O que você pode solicitar?
+        </h2>
+
+
+        <div class="despesas">
+
+
+            <div class="despesa">
+
+                <div class="icone">
+                    🍽️
+                </div>
+
+                <strong>
+                    Alimentação
+                </strong>
+
+            </div>
+
+
+            <div class="despesa">
+
+                <div class="icone">
+                    🚗
+                </div>
+
+                <strong>
+                    Transporte por aplicativo
+                </strong>
+
+            </div>
+
+
+            <div class="despesa">
+
+                <div class="icone">
+                    🛣️
+                </div>
+
+                <strong>
+                    Pedágios
+                </strong>
+
+            </div>
+
+
+            <div class="despesa">
+
+                <div class="icone">
+                    📋
+                </div>
+
+                <strong>
+                    Outras despesas de viagem
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ========================================
+             DIVISOR
+        ======================================== -->
+
+        <div class="divisor"></div>
+
+
+
+        <!-- ========================================
+             ABERTURA DE CHAMADOS
+        ======================================== -->
+
+        <section class="chamados">
+
+
+            <h2 class="subtitulo">
+                Precisa solicitar algo?
+            </h2>
+
+
+            <p class="subdescricao">
+                Selecione abaixo a opção que corresponde à sua necessidade.
+            </p>
+
+
+            <div class="cards-chamados">
+
+
+                <!-- NOVO CADASTRO -->
+
+                <div class="chamado">
+
+                    <div class="chamado-icone">
+                        👤
+                    </div>
+
+
+                    <h2>
+                        É novo por aqui?
+                    </h2>
+
+
+                    <p>
+                        Solicite seu cadastro SAP como funcionário.
+                    </p>
+
+
+                    <a
+                        href="https://fsbioenergia.topdesk.net/tas/public/ssp/content/serviceflow?unid=cea29b4bbbe347da915ab73857e8571a&from=6646d6f2-fc56-4987-828a-2dd281b09cc4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="botao-topdesk"
+                    >
+                        Solicitar cadastro →
+                    </a>
+
+                </div>
+
+
+
+                <!-- ATUALIZAÇÃO -->
+
+                <div class="chamado">
+
+                    <div class="chamado-icone">
+                        🔄
+                    </div>
+
+
+                    <h2>
+                        Já é de casa?
+                    </h2>
+
+
+                    <p>
+                        Quer atualizar seus dados?
+                    </p>
+
+
+                    <a
+                        href="https://fsbioenergia.topdesk.net/tas/public/ssp/content/serviceflow?unid=5be22a55b8d54d56881380e8dd5e2a96&from=89d17623-ea2c-4e41-8d5c-ac2fbba9e860"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="botao-topdesk"
+                    >
+                        Solicitar aqui →
+                    </a>
+
+                </div>
+
+
+
+                <!-- OUTROS ASSUNTOS -->
+
+                <div class="chamado">
+
+                    <div class="chamado-icone">
+                        💬
+                    </div>
+
+
+                    <h2>
+                        Outros temas relacionados ao Concur
+                    </h2>
+
+
+                    <p>
+                        Precisa de ajuda com outro assunto relacionado ao SAP Concur?
+                    </p>
+
+
+                    <a
+                        href="https://fsbioenergia.topdesk.net/tas/public/ssp/content/serviceflow?unid=97a7049722f943c6adcc10bd996b4a56&from=6bce204c-5fec-44b6-b267-99d44ca6bae3"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="botao-topdesk"
+                    >
+                        Registre seu chamado →
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             ORIENTAÇÕES
+        ======================================== -->
+
+        <section class="orientacoes">
+
+
+            <div class="orientacoes-titulo">
+
+                <span class="tag">
+                    GUIA RÁPIDO
+                </span>
+
+
+                <h2>
+                    Orientações importantes
+                </h2>
+
+
+                <p>
+                    Clique em cada tópico para consultar as orientações do SAP Concur.
+                </p>
+
+            </div>
+
+
+
+            <!-- PREENCHIMENTO DO FORMULÁRIO -->
+
+            <div class="accordion">
+
+                <button
+                    type="button"
+                    class="accordion-titulo"
+                    onclick="abrirOrientacao(this)"
+                >
+
+                    <span class="titulo-esquerda">
+
+                        <span class="icone-orientacao">
+                            📋
+                        </span>
+
+                        <span>
+                            Preenchimento do formulário
+                        </span>
+
+                    </span>
+
+
+                    <span class="seta">
+                        ▼
+                    </span>
+
+                </button>
+
+
+                <div class="accordion-conteudo">
+
+                    <div class="accordion-conteudo-inner">
+
+                        <p>
+                            Preencha o formulário conforme os dados solicitados.
+                        </p>
+
+
+                        <div class="destaque-alerta">
+
+                            <strong>
+                                ⚠️ Dados bancários
+                            </strong>
+
+                            <p>
+                                No item <strong>DADOS BANCÁRIOS</strong>,
+                                <strong>NÃO</strong> devem ser informados
+                                dados de <strong>CONTA SALÁRIO</strong>.
+                            </p>
+
+                            <p>
+                                Os campos devem ser preenchidos com informações
+                                de <strong>conta corrente ou conta poupança</strong>.
+                            </p>
+
+                        </div>
+
+
+                        <p>
+                            Após preenchidos os dados, clique em
+                            <strong>Enviar</strong> e aguarde o atendimento
+                            do seu chamado.
+                        </p>
+
+
+                        <div class="destaque-info">
+
+                            <strong>
+                                💡 Centro de custo
+                            </strong>
+
+                            <p>
+                                O centro de custo deverá ser obtido junto ao
+                                <strong>Time de Gente (RH)</strong>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- APÓS O ATENDIMENTO -->
+
+            <div class="accordion">
+
+                <button
+                    type="button"
+                    class="accordion-titulo"
+                    onclick="abrirOrientacao(this)"
+                >
+
+                    <span class="titulo-esquerda">
+
+                        <span class="icone-orientacao">
+                            📧
+                        </span>
+
+                        <span>
+                            Após o atendimento do chamado
+                        </span>
+
+                    </span>
+
+
+                    <span class="seta">
+                        ▼
+                    </span>
+
+                </button>
+
+
+                <div class="accordion-conteudo">
+
+                    <div class="accordion-conteudo-inner">
+
+                        <p>
+                            Após o atendimento do chamado pelo time de cadastros,
+                            se os dados informados estiverem corretos,
+                            em até <strong>48 horas</strong> você receberá
+                            um e-mail conforme o exemplo abaixo com os dados
+                            para o primeiro acesso.
+                        </p>
+
+
+                        <div class="destaque-info">
+
+                            <strong>
+                                📬 Fique atento ao seu e-mail
+                            </strong>
+
+                            <p>
+                                O e-mail recebido conterá os dados necessários
+                                para realizar o primeiro acesso à plataforma Concur.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRIMEIRO ACESSO / SENHAS -->
+
+            <div class="accordion">
+
+                <button
+                    type="button"
+                    class="accordion-titulo"
+                    onclick="abrirOrientacao(this)"
+                >
+
+                    <span class="titulo-esquerda">
+
+                        <span class="icone-orientacao">
+                            🔐
+                        </span>
+
+                        <span>
+                            Primeiro acesso / Senhas
+                        </span>
+
+                    </span>
+
+
+                    <span class="seta">
+                        ▼
+                    </span>
+
+                </button>
+
+
+                <div class="accordion-conteudo">
+
+                    <div class="accordion-conteudo-inner">
+
+                        <p>
+                            O primeiro acesso à plataforma Concur deverá ser
+                            realizado pelo <strong>computador</strong>.
+                        </p>
+
+
+                        <p>
+                            Em seguida será solicitada a alteração de senha.
+                            A nova senha deverá atender aos seguintes critérios:
+                        </p>
+
+
+                        <div class="destaque-info">
+
+                            <strong>
+                                🔑 Critérios para a nova senha
+                            </strong>
+
+
+                            <ul class="regras-senha">
+
+                                <li>
+                                    Conter <strong>15 dígitos</strong>.
+                                </li>
+
+                                <li>
+                                    Incluir pelo menos um caractere
+                                    <strong>maiúsculo (A-Z)</strong>.
+                                </li>
+
+                                <li>
+                                    Incluir pelo menos um caractere
+                                    <strong>minúsculo (a-z)</strong>.
+                                </li>
+
+                                <li>
+                                    Incluir pelo menos um
+                                    <strong>número (0-9)</strong>.
+                                </li>
+
+                                <li>
+                                    Incluir pelo menos um caractere
+                                    <strong>especial</strong>
+                                    (não alfanumérico).
+                                </li>
+
+                            </ul>
+
+
+                            <strong>
+                                Exemplo:
+                            </strong>
+
+                            (, @, #, $, %, &, >, <, ;)
+
+                        </div>
+
+
+                        <p>
+                            <strong>
+                                Informações adicionais:
+                            </strong>
+                        </p>
+
+
+                        <div class="destaque-alerta">
+
+                            <p>
+                                🔄 As senhas expiram a cada
+                                <strong>30 dias</strong>, sendo necessário
+                                realizar a atualização.
+                            </p>
+
+
+                            <p>
+                                🔒 Caso você erre a sua senha por
+                                <strong>3 vezes consecutivas</strong>,
+                                seu acesso será bloqueado durante
+                                <strong>10 minutos</strong>.
+                            </p>
+
+
+                            <p>
+                                🔓 Caso a sua conta seja bloqueada,
+                                o desbloqueio ocorrerá de forma automática
+                                após <strong>24 horas</strong>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ========================================
+             PRAZOS
+        ======================================== -->
+
+        <div class="prazos">
+
+            <h2>
+                ⏱️ Prazos (SLA)
+            </h2>
+
+
+            <p>
+                Atendimento do chamado:
+                <strong>2 dias úteis</strong>
+            </p>
+
+
+            <p>
+                Análise de relatório em auditoria:
+                <strong>5 dias úteis</strong>
+            </p>
+
+
+            <p>
+                Reembolsos pagos às segundas e quartas-feiras pelo Financeiro CoE.
+            </p>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+         ORIENTAÇÕES DINÂMICAS
+    ======================================== -->
+
+    <script>
+
+        function abrirOrientacao(botao) {
+
+            const accordion = botao.parentElement;
+
+            const todos =
+                document.querySelectorAll(".accordion");
+
+
+            todos.forEach(function(item) {
+
+                if (item !== accordion) {
+
+                    item.classList.remove("ativo");
+
+                    item.querySelector(".accordion-conteudo").style.maxHeight = null;
+
+                }
+
+            });
+
+
+            const conteudo =
+                accordion.querySelector(".accordion-conteudo");
+
+
+            if (accordion.classList.contains("ativo")) {
+
+                accordion.classList.remove("ativo");
+
+                conteudo.style.maxHeight = null;
+
+            } else {
+
+                accordion.classList.add("ativo");
+
+                conteudo.style.maxHeight =
+                    conteudo.scrollHeight + "px";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

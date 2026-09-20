@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MOBI - Central de Cadastro</title>
+
+    <link rel="stylesheet" href="detalhe.css">
+
+    <style>
+
+        /* =====================================================
+           AJUSTES SOMENTE DA PRIMEIRA TELA
+        ===================================================== */
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            box-sizing: border-box;
+            background: #2B8A49 !important;
+        }
+
+        .logo {
+            font-size: 36px !important;
+            font-weight: 800 !important;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            font-size: 13px !important;
+        }
+
+        .banner {
+            width: 100%;
+            min-height: 560px !important;
+            box-sizing: border-box;
+            background: #2B8A49 !important;
+            color: #FFFFFF;
+        }
+
+        .conteudo-banner {
+            padding-top: 25px !important;
+        }
+
+        .mascote-mobi {
+            width: 145px !important;
+            height: 145px !important;
+            margin-bottom: 0 !important;
+        }
+
+        .subtitulo {
+            font-size: 15px !important;
+            margin-top: 4px !important;
+            margin-bottom: 8px !important;
+            color: #FFFFFF !important;
+        }
+
+        .banner h1 {
+            font-size: 42px !important;
+            line-height: 1.12 !important;
+            color: #FCD341 !important;
+            margin: 5px auto 16px !important;
+            max-width: 850px;
+        }
+
+        .descricao-banner {
+            font-size: 15px !important;
+            color: #FFFFFF !important;
+            max-width: 650px;
+            margin: 0 auto 25px !important;
+        }
+
+
+        /* =====================================================
+           MOBI FLUTUANTE
+        ===================================================== */
+
+        .mobi-flutuante {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 99999;
+            font-family: Arial, sans-serif;
+        }
+
+        .mobi-botao {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 4px solid #368768;
+            background: #F7D21E;
+            cursor: pointer;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.22);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: transform 0.2s ease;
+        }
+
+        .mobi-botao:hover {
+            transform: scale(1.05);
+        }
+
+        .mobi-botao svg {
+            width: 52px;
+            height: 52px;
+        }
+
+        .mobi-chat {
+            display: none;
+            position: absolute;
+            right: 0;
+            bottom: 85px;
+            width: 350px;
+            background: #FFFFFF;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+
+        .mobi-chat.aberto {
+            display: block;
+        }
+
+        .mobi-chat-header {
+            background: #2B8A49;
+            color: white;
+            padding: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mobi-identidade {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mobi-coe {
+            display: grid;
+            grid-template-columns: repeat(3, 10px);
+            grid-template-rows: repeat(3, 10px);
+            gap: 2px;
+            padding: 5px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 7px;
+        }
+
+        .lego {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            position: relative;
+            box-shadow: inset 0 -2px 2px rgba(0,0,0,0.18);
+        }
+
+        .lego::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            top: 1px;
+            left: 2px;
+            background: rgba(255,255,255,0.55);
+        }
+
+        .lego-verde {
+            background: #4CAF3D;
+        }
+
+        .lego-amarelo {
+            background: #F6D71E;
+        }
+
+        .lego-laranja {
+            background: #F0812E;
+        }
+
+        .mobi-nome {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .mobi-descricao {
+            margin: 2px 0 0;
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .mobi-fechar {
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .mobi-chat-corpo {
+            padding: 18px;
+        }
+
+        .mobi-mensagem {
+            background: #F5F7F6;
+            border-radius: 12px;
+            padding: 13px;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .mobi-opcao {
+            display: block;
+            padding: 12px;
+            margin-bottom: 8px;
+            border: 1px solid #D9DEDA;
+            border-radius: 10px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .mobi-opcao:hover {
+            background: #EAF5EF;
+            border-color: #559A41;
+            color: #2B8A49;
+        }
+
+        .mobi-frase {
+            text-align: center;
+            margin-top: 14px;
+            color: #2B8A49;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .logo {
+                font-size: 28px !important;
+            }
+
+            nav a {
+                font-size: 11px !important;
+            }
+
+            .banner {
+                min-height: 520px !important;
+            }
+
+            .conteudo-banner {
+                padding: 20px 20px 40px !important;
+            }
+
+            .mascote-mobi {
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            .banner h1 {
+                font-size: 30px !important;
+            }
+
+            .descricao-banner {
+                font-size: 14px !important;
+                padding: 0 15px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .mobi-flutuante {
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .mobi-chat {
+                width: calc(100vw - 30px);
+                right: -5px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- ================================
+         CABEÇALHO
+    ================================= -->
+
+    <header>
+
+        <div class="logo">
+            MOBI
+        </div>
+
+        <nav>
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="sap-concur.html">
+                SAP Concur
+            </a>
+
+            <a href="qr-code.html">
+                QR Code
+            </a>
+
+            <a href="https://conheca.govoll.com/guia-voll-para-viajantes-corporativos#primeiros-passos"
+               target="_blank"
+               rel="noopener noreferrer">
+                🧳 Prepare sua viagem
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================================
+         BANNER PRINCIPAL
+    ================================= -->
+
+    <section class="banner" id="inicio">
+
+        <div class="conteudo-banner">
+
+            <svg class="mascote-mobi"
+                 viewBox="0 0 100 100"
+                 xmlns="http://www.w3.org/2000/svg">
+
+                <rect
+                    x="15"
+                    y="30"
+                    width="70"
+                    height="55"
+                    rx="14"
+                    fill="#F7D21E"
+                    stroke="#86B02B"
+                    stroke-width="6"/>
+
+                <path
+                    d="M 38 30 Q 38 14 50 14 Q 62 14 62 30"
+                    fill="none"
+                    stroke="#368768"
+                    stroke-width="6"
+                    stroke-linecap="round"/>
+
+                <line
+                    x1="42"
+                    y1="52"
+                    x2="58"
+                    y2="52"
+                    stroke="#368768"
+                    stroke-width="5"/>
+
+                <circle
+                    cx="34"
+                    cy="55"
+                    r="13"
+                    fill="#ffffff"
+                    stroke="#368768"
+                    stroke-width="5"/>
+
+                <circle
+                    cx="66"
+                    cy="55"
+                    r="13"
+                    fill="#ffffff"
+                    stroke="#368768"
+                    stroke-width="5"/>
+
+                <circle
+                    cx="30"
+                    cy="52"
+                    r="3"
+                    fill="#86B02B"/>
+
+                <circle
+                    cx="62"
+                    cy="52"
+                    r="3"
+                    fill="#86B02B"/>
+
+                <path
+                    d="M 40 72 Q 50 80 60 72"
+                    fill="none"
+                    stroke="#368768"
+                    stroke-width="5"
+                    stroke-linecap="round"/>
+
+            </svg>
+
+
+            <p class="subtitulo">
+                Viajar pelo MOBI ficou mais fácil
+            </p>
+
+
+            <h1>
+                Encontre tudo o que precisa no MOBI
+            </h1>
+
+
+            <p class="descricao-banner">
+                Consulte sistemas, cadastros, procedimentos e orientações
+                de forma rápida e simples.
+            </p>
+
+
+            <a href="consulta-voll.html" class="botao">
+                Clique aqui e verifique se você já possui cadastro na Voll
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         SERVIÇOS
+    ================================= -->
+
+    <section class="destinos" id="servicos">
+
+        <div class="titulo-secao">
+
+            <span>✦</span>
+
+            <h2>
+                Acesse rapidamente
+            </h2>
+
+            <p>
+                Encontre os principais serviços e informações do MOBI.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card" id="sap-concur">
+
+                <div class="card-conteudo">
+
+                    <span class="pais">
+                        SAP Concur
+                    </span>
+
+                    <h3>
+                        SAP Concur
+                    </h3>
+
+                    <div class="info-card">
+
+                        <strong>
+                            📌 Mudança de gestão
+                        </strong>
+
+                        <p>
+                            O SAP Concur passa a ser responsabilidade
+                            do time de Serviços CoE.
+                        </p>
+
+                    </div>
+
+                    <a href="sap-concur.html" class="botao-card">
+                        Acessar →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="card" id="qr-code">
+
+                <div class="card-conteudo">
+
+                    <span class="pais">
+                        QR Code
+                    </span>
+
+                    <h3>
+                        QR Code
+                    </h3>
+
+                    <p>
+                        Acesse rapidamente os aplicativos e recursos
+                        disponibilizados pelo MOBI.
+                    </p>
+
+                    <a href="qr-code.html" class="botao-card">
+                        Acessar →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="card" id="perguntas-frequentes">
+
+                <div class="card-conteudo">
+
+                    <span class="pais">
+                        Perguntas Frequentes
+                    </span>
+
+                    <h3>
+                        ❓ Perguntas Frequentes
+                    </h3>
+
+                    <p>
+                        Tire suas dúvidas sobre prestações de contas,
+                        reembolsos e orientações gerais.
+                    </p>
+
+                    <a href="perguntas-frequentes.html" class="botao-card">
+                        Consultar dúvidas →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         SOBRE O MOBI
+    ================================= -->
+
+    <section class="sobre" id="sobre">
+
+        <div class="sobre-conteudo">
+
+            <div class="icone-aviao">
+                MOBI
+            </div>
+
+            <div>
+
+                <h2>
+                    MOBI: simples, rápido e fácil.
+                </h2>
+
+                <p>
+                    Encontre informações, consulte cadastros e acesse
+                    orientações de forma simples e centralizada.
+                </p>
+
+                <p>
+                    Antes de abrir um chamado, consulte o MOBI e encontre
+                    o caminho certo para sua solicitação.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         AJUDA
+    ================================= -->
+
+    <section class="contato" id="contato">
+
+        <h2>
+            Precisa de ajuda?
+        </h2>
+
+        <p>
+            Consulte as perguntas frequentes ou acesse os canais
+            de atendimento.
+        </p>
+
+        <a href="perguntas-frequentes.html" class="botao">
+            Consultar perguntas frequentes
+        </a>
+
+    </section>
+
+
+    <!-- ================================
+         RODAPÉ
+    ================================= -->
+
+    <footer>
+
+        <div class="logo-footer">
+            MOBI
+        </div>
+
+        <p>
+            Central de Cadastro
+        </p>
+
+        <p>
+            © 2026 MOBI - Cadastro e Master Data
+        </p>
+
+    </footer>
+
+
+    <!-- =================================================
+         MOBI FLUTUANTE
+    ================================================= -->
+
+    <div class="mobi-flutuante">
+
+        <div class="mobi-chat" id="mobiChat">
+
+            <div class="mobi-chat-header">
+
+                <div class="mobi-identidade">
+
+                    <div class="mobi-coe">
+
+                        <span class="lego lego-verde"></span>
+                        <span class="lego lego-verde"></span>
+                        <span class="lego lego-verde"></span>
+
+                        <span class="lego lego-verde"></span>
+                        <span class="lego lego-amarelo"></span>
+                        <span class="lego lego-verde"></span>
+
+                        <span class="lego lego-verde"></span>
+                        <span class="lego lego-laranja"></span>
+                        <span class="lego lego-verde"></span>
+
+                    </div>
+
+                    <div>
+
+                        <p class="mobi-nome">
+                            MOBI
+                        </p>
+
+                        <p class="mobi-descricao">
+                            Assistente de viagens
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="mobi-fechar"
+                    onclick="fecharMobi()">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="mobi-chat-corpo">
+
+                <div class="mobi-mensagem">
+
+                    👋 Olá! Eu sou o <strong>MOBI</strong>.
+
+                    <br><br>
+
+                    Posso ajudar você a encontrar
+                    rapidamente as informações da sua viagem.
+
+                </div>
+
+
+                <a href="sap-concur.html" class="mobi-opcao">
+                    ✈️ SAP Concur
+                </a>
+
+
+                <a href="qr-code.html" class="mobi-opcao">
+                    📱 Baixar SAP Concur
+                </a>
+
+
+                <a
+                    href="https://conheca.govoll.com/guia-voll-para-viajantes-corporativos#primeiros-passos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mobi-opcao">
+
+                    🧳 Prepare sua viagem
+
+                </a>
+
+
+                <a href="consulta-voll.html" class="mobi-opcao">
+                    👤 Consultar cadastro na Voll
+                </a>
+
+
+                <a href="perguntas-frequentes.html" class="mobi-opcao">
+                    ❓ Perguntas frequentes
+                </a>
+
+
+                <div class="mobi-frase">
+                    Energia que constrói Excelência!
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="mobi-botao"
+            onclick="abrirMobi()"
+            aria-label="Abrir assistente MOBI">
+
+            <svg
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <rect
+                    x="15"
+                    y="30"
+                    width="70"
+                    height="55"
+                    rx="14"
+                    fill="#F7D21E"
+                    stroke="#368768"
+                    stroke-width="6"/>
+
+                <path
+                    d="M 38 30 Q 38 14 50 14 Q 62 14 62 30"
+                    fill="none"
+                    stroke="#368768"
+                    stroke-width="6"
+                    stroke-linecap="round"/>
+
+                <circle
+                    cx="34"
+                    cy="55"
+                    r="13"
+                    fill="#ffffff"
+                    stroke="#368768"
+                    stroke-width="5"/>
+
+                <circle
+                    cx="66"
+                    cy="55"
+                    r="13"
+                    fill="#ffffff"
+                    stroke="#368768"
+                    stroke-width="5"/>
+
+                <circle
+                    cx="30"
+                    cy="52"
+                    r="3"
+                    fill="#86B02B"/>
+
+                <circle
+                    cx="62"
+                    cy="52"
+                    r="3"
+                    fill="#86B02B"/>
+
+                <path
+                    d="M 40 72 Q 50 80 60 72"
+                    fill="none"
+                    stroke="#368768"
+                    stroke-width="5"
+                    stroke-linecap="round"/>
+
+            </svg>
+
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function abrirMobi() {
+            document.getElementById("mobiChat").classList.add("aberto");
+        }
+
+        function fecharMobi() {
+            document.getElementById("mobiChat").classList.remove("aberto");
+        }
+
+    </script>
+
+
+</body>
+
+</html>

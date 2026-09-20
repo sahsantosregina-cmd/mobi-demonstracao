@@ -1,0 +1,2608 @@
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Perguntas Frequentes - MOBI</title>
+
+    <link rel="stylesheet" href="detalhe.css">
+
+    <style>
+
+        /* ================================
+           IDENTIDADE MOBI
+        ================================= */
+
+        :root {
+            --verde-mobi: #006B3F;
+            --verde-claro: #EAF5EF;
+            --amarelo-mobi: #F4C400;
+            --branco: #FFFFFF;
+            --cinza: #666666;
+            --cinza-claro: #F5F7F6;
+            --borda: #DDE5E0;
+        }
+
+
+        /* ================================
+           CABEÇALHO MOBI
+        ================================= */
+
+        .mobi-header {
+            background: var(--verde-mobi);
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mobi-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .mobi-logo::first-letter {
+            color: var(--amarelo-mobi);
+        }
+
+        .mobi-voltar {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .mobi-voltar:hover {
+            color: var(--amarelo-mobi);
+        }
+
+
+        /* ================================
+           CONTEÚDO
+        ================================= */
+
+        .faq-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 55px 25px 70px;
+        }
+
+        .faq-intro {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .faq-intro span {
+            display: block;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .faq-intro h1 {
+            color: var(--verde-mobi);
+            font-size: 32px;
+            margin: 0 0 10px;
+        }
+
+        .faq-intro p {
+            color: var(--cinza);
+            font-size: 16px;
+            margin: 0;
+        }
+
+
+        /* ================================
+           PERGUNTAS
+        ================================= */
+
+        .faq-categoria {
+            margin-bottom: 35px;
+        }
+
+        .faq-categoria h2 {
+            color: var(--verde-mobi);
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .faq-item {
+            margin-bottom: 9px;
+        }
+
+        .faq-pergunta {
+            width: 100%;
+            border: 1px solid var(--borda);
+            padding: 17px 20px;
+            text-align: left;
+            background: var(--cinza-claro);
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            transition: 0.2s;
+        }
+
+        .faq-pergunta:hover {
+            background: var(--verde-claro);
+            border-color: var(--verde-mobi);
+        }
+
+        .faq-resposta {
+            display: none;
+            padding: 17px 20px;
+            background: white;
+            border-left: 4px solid var(--amarelo-mobi);
+            margin-top: 5px;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .faq-resposta.aberta {
+            display: block;
+        }
+
+
+        /* ================================
+           TABELA
+        ================================= */
+
+        .valores {
+            margin-top: 55px;
+            padding-top: 40px;
+            border-top: 1px solid var(--borda);
+        }
+
+        .valores h2 {
+            color: var(--verde-mobi);
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .tabela-wrapper {
+            overflow-x: auto;
+            margin-bottom: 25px;
+        }
+
+        .tabela-valores {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tabela-valores th,
+        .tabela-valores td {
+            padding: 13px 15px;
+            border: 1px solid var(--borda);
+            text-align: left;
+        }
+
+        .tabela-valores th {
+            background: var(--verde-mobi);
+            color: white;
+            font-weight: 600;
+        }
+
+        .tabela-valores tr:nth-child(even) {
+            background: #FAFCFB;
+        }
+
+        .tabela-valores td strong {
+            color: var(--verde-mobi);
+        }
+
+        .observacao {
+            font-size: 13px;
+            color: var(--cinza);
+        }
+
+
+        /* ================================
+           DÚVIDAS SOBRE ACESSO
+        ================================= */
+
+        .acesso {
+            margin-top: 65px;
+            padding-top: 45px;
+            border-top: 1px solid var(--borda);
+        }
+
+        .titulo-acesso {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titulo-acesso .icone {
+            font-size: 30px;
+        }
+
+        .titulo-acesso h2 {
+            color: var(--verde-mobi);
+            font-size: 27px;
+            margin: 8px 0;
+        }
+
+        .titulo-acesso p {
+            color: var(--cinza);
+            margin: 0;
+        }
+
+        .grupo-acesso {
+            margin-bottom: 55px;
+        }
+
+        .grupo-acesso h3 {
+            color: var(--verde-mobi);
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .grupo-acesso h3::after {
+            content: "";
+            display: block;
+            width: 45px;
+            height: 3px;
+            background: var(--amarelo-mobi);
+            margin-top: 8px;
+            border-radius: 3px;
+        }
+
+        .mockups {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .mockup-item {
+            width: 255px;
+        }
+
+        .mockup-caption {
+            margin-top: 12px;
+            font-size: 13px;
+            color: #777;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+
+        /* ================================
+           IDENTIFICAÇÃO DO MOBI BOT
+        ================================= */
+
+        .mobi-bot-bar {
+            height: 34px;
+            background: #12241A;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 11px;
+            border-radius: 10px 10px 0 0;
+            font-size: 10px;
+        }
+
+        .mobi-bot-name {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .mobi-bot-icon {
+            font-size: 15px;
+        }
+
+        .mobi-bot-status {
+            color: #9EDB6B;
+            font-size: 9px;
+            font-weight: 600;
+        }
+
+        .mobi-bot-status.executando {
+            color: var(--amarelo-mobi);
+        }
+
+
+        /* ================================
+           JANELA DO NAVEGADOR
+        ================================= */
+
+        .browser-window {
+            background: #F3F3F3;
+            border: 1px solid #D6D6D6;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .browser-top {
+            height: 31px;
+            background: #E8E8E8;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 0 9px;
+        }
+
+        .browser-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #BDBDBD;
+        }
+
+        .browser-address {
+            flex: 1;
+            height: 19px;
+            background: #FFFFFF;
+            border: 1px solid #D5D5D5;
+            border-radius: 5px;
+            margin-left: 6px;
+            padding: 0 7px;
+            display: flex;
+            align-items: center;
+            color: #777;
+            font-size: 7px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+
+        /* ================================
+           LOGIN CORPORATIVO
+        ================================= */
+
+        .corporate-login {
+            background: #F5F5F5;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 220px;
+            background: #FFFFFF;
+            padding: 22px;
+            box-shadow: 0 2px 9px rgba(0, 0, 0, 0.14);
+        }
+
+        .microsoft-wordmark {
+            font-size: 16px;
+            font-weight: 600;
+            color: #242424;
+            margin-bottom: 20px;
+        }
+
+        .ms-squares {
+            display: inline-grid;
+            grid-template-columns: repeat(2, 7px);
+            grid-template-rows: repeat(2, 7px);
+            gap: 1px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .ms-square {
+            background: #F25022;
+        }
+
+        .ms-square:nth-child(2) {
+            background: #7FBA00;
+        }
+
+        .ms-square:nth-child(3) {
+            background: #00A4EF;
+        }
+
+        .ms-square:nth-child(4) {
+            background: #FFB900;
+        }
+
+        .login-card h4 {
+            margin: 0 0 16px;
+            font-size: 17px;
+            font-weight: 500;
+            color: #1F1F1F;
+        }
+
+        .login-label {
+            display: block;
+            font-size: 8px;
+            color: #444;
+            margin-bottom: 4px;
+        }
+
+        .login-field {
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px solid #666;
+            padding: 7px 1px;
+            font-size: 9px;
+            color: #333;
+            background: transparent;
+            outline: none;
+            margin-bottom: 14px;
+        }
+
+        .login-link {
+            color: #0067B8;
+            font-size: 8px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .login-button-area {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .login-next {
+            background: #0067B8;
+            color: white;
+            border: none;
+            padding: 7px 18px;
+            font-size: 9px;
+            font-weight: 600;
+        }
+
+
+        /* ================================
+           SSO CORPORATIVO
+        ================================= */
+
+        .sso-screen {
+            min-height: 280px;
+            background: #F7F7F7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 18px;
+        }
+
+        .sso-card {
+            width: 100%;
+            max-width: 220px;
+            background: white;
+            padding: 21px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.11);
+        }
+
+        .fs-logo {
+            color: var(--verde-mobi);
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 17px;
+        }
+
+        .sso-title {
+            color: #222;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .sso-user {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            border: 1px solid #E0E0E0;
+            margin-bottom: 13px;
+        }
+
+        .sso-avatar {
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            background: #0067B8;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 600;
+        }
+
+        .sso-email {
+            font-size: 8px;
+            color: #444;
+        }
+
+        .sso-description {
+            color: #777;
+            font-size: 8px;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .sso-button {
+            width: 100%;
+            background: #0067B8;
+            color: white;
+            border: none;
+            padding: 8px;
+            font-size: 9px;
+            font-weight: 600;
+        }
+
+
+        /* ================================
+           CELULAR AUTHENTICATOR
+        ================================= */
+
+        .phone-area {
+            background: #F4F4F4;
+            padding: 14px;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone {
+            width: 175px;
+            background: #111;
+            padding: 7px;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
+        }
+
+        .phone-screen {
+            background: white;
+            border-radius: 19px;
+            overflow: hidden;
+            min-height: 340px;
+        }
+
+        .phone-status {
+            height: 22px;
+            background: #202020;
+            color: white;
+            padding: 0 11px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 7px;
+        }
+
+        .auth-header {
+            background: #3F51B5;
+            color: white;
+            padding: 14px 12px;
+        }
+
+        .auth-title {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .auth-subtitle {
+            font-size: 7px;
+            margin-top: 3px;
+            opacity: 0.85;
+        }
+
+        .auth-body {
+            padding: 12px;
+        }
+
+        .auth-account {
+            border: 1px solid #E0E0E0;
+            border-radius: 7px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .auth-account-header {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .auth-avatar {
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            background: #3F51B5;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            font-weight: 600;
+        }
+
+        .auth-account-name {
+            font-size: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .auth-account-email {
+            font-size: 6.5px;
+            color: #777;
+            margin-top: 2px;
+        }
+
+        .auth-code-label {
+            text-align: center;
+            font-size: 7px;
+            color: #777;
+            margin-top: 14px;
+        }
+
+        .auth-code {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 600;
+            color: #222;
+            letter-spacing: 3px;
+            margin-top: 5px;
+        }
+
+        .auth-timer {
+            text-align: center;
+            color: #777;
+            font-size: 6.5px;
+            margin-top: 4px;
+        }
+
+        .auth-action {
+            border: 1px solid #E0E0E0;
+            border-radius: 7px;
+            padding: 9px;
+            font-size: 7px;
+            color: #444;
+            margin-top: 10px;
+        }
+
+
+        /* ================================
+           ADICIONAR CONTA AUTHENTICATOR
+        ================================= */
+
+        .add-account-screen {
+            min-height: 340px;
+            background: white;
+        }
+
+        .add-account-header {
+            background: #3F51B5;
+            color: white;
+            padding: 14px 12px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .add-account-content {
+            padding: 16px 12px;
+        }
+
+        .add-account-title {
+            color: #222;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        .add-account-text {
+            color: #777;
+            font-size: 7px;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .account-option {
+            border: 1px solid #DDD;
+            border-radius: 7px;
+            padding: 11px 9px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 7.5px;
+        }
+
+        .account-option.selected {
+            border-color: #3F51B5;
+            background: #F0F2FF;
+        }
+
+        .account-option-icon {
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           QR CODE AUTHENTICATOR
+        ================================= */
+
+        .qr-screen {
+            min-height: 340px;
+            background: white;
+        }
+
+        .qr-header {
+            background: #3F51B5;
+            color: white;
+            padding: 14px 12px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .qr-content {
+            padding: 20px 13px;
+            text-align: center;
+        }
+
+        .qr-title {
+            font-size: 12px;
+            color: #222;
+            margin-bottom: 7px;
+        }
+
+        .qr-text {
+            font-size: 7px;
+            color: #777;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .qr-pattern {
+            width: 105px;
+            height: 105px;
+            margin: 0 auto 15px;
+            background-color: white;
+            background-image:
+                linear-gradient(90deg, #111 50%, transparent 50%),
+                linear-gradient(#111 50%, transparent 50%);
+            background-size: 13px 13px;
+            border: 7px solid white;
+            box-shadow: 0 0 0 1px #DDD;
+        }
+
+        .qr-status {
+            font-size: 7px;
+            color: #777;
+        }
+
+
+        /* ================================
+           SENHA / RECUPERAÇÃO
+        ================================= */
+
+        .recovery-screen {
+            background: #F5F5F5;
+            min-height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 18px;
+        }
+
+        .recovery-card {
+            background: white;
+            width: 100%;
+            max-width: 220px;
+            padding: 21px;
+            box-shadow: 0 2px 10px rgba(0, 0, .12);
+        }
+
+        .recovery-title {
+            font-size: 15px;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .recovery-text {
+            color: #777;
+            font-size: 8px;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .recovery-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+            border: 1px solid #888;
+            font-size: 8px;
+            margin-bottom: 12px;
+        }
+
+
+        /* ================================
+           SUCESSO
+        ================================= */
+
+        .success-screen {
+            background: #F5F5F5;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+        }
+
+        .success-card {
+            background: white;
+            width: 100%;
+            max-width: 220px;
+            padding: 23px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, .12);
+        }
+
+        .success-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #EAF5EF;
+            color: var(--verde-mobi);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .success-title {
+            font-size: 14px;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .success-text {
+            font-size: 8px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+
+        /* ================================
+           DÚVIDAS SOBRE SENHAS / 2FA
+        ================================= */
+
+        .twofa-reset-screen {
+            background: #F5F5F5;
+            min-height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 18px;
+        }
+
+        .twofa-reset-card {
+            width: 100%;
+            max-width: 220px;
+            background: white;
+            padding: 21px;
+            box-shadow: 0 2px 10px rgba(0, 0, .12);
+        }
+
+        .twofa-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #F0F2FF;
+            color: #3F51B5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .twofa-title {
+            font-size: 14px;
+            color: #222;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .twofa-text {
+            color: #777;
+            font-size: 8px;
+            line-height: 1.5;
+            margin-bottom: 13px;
+        }
+
+        .twofa-validation {
+            background: #EAF5EF;
+            border-left: 3px solid var(--verde-mobi);
+            padding: 9px;
+            color: #356047;
+            font-size: 8px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .twofa-warning {
+            background: #FFF9DF;
+            border-left: 3px solid var(--amarelo-mobi);
+            padding: 9px;
+            color: #75641B;
+            font-size: 7px;
+            line-height: 1.4;
+            margin-bottom: 13px;
+        }
+
+        .twofa-button {
+            width: 100%;
+            background: #0067B8;
+            color: white;
+            border: none;
+            padding: 8px;
+            font-size: 9px;
+            font-weight: 600;
+        }
+
+        .reset-email-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            background: #F7F8FA;
+            border: 1px solid #E0E4E8;
+            border-radius: 7px;
+            padding: 11px;
+            margin-bottom: 12px;
+        }
+
+        .reset-email-icon {
+            font-size: 18px;
+        }
+
+        .reset-email-box strong {
+            display: block;
+            color: #333;
+            font-size: 8px;
+            margin-bottom: 4px;
+        }
+
+        .reset-email-box span {
+            display: block;
+            color: #777;
+            font-size: 7px;
+            line-height: 1.4;
+        }
+
+        .reset-validity {
+            text-align: center;
+            color: #75641B;
+            background: #FFF9DF;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 7px;
+            margin-bottom: 12px;
+        }
+
+
+        /* ================================
+           FINAL
+        ================================= */
+
+        .duvida-final {
+            margin-top: 50px;
+            padding: 25px;
+            background: var(--verde-claro);
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #D5E9DC;
+        }
+
+        .duvida-final h3 {
+            color: var(--verde-mobi);
+            margin-bottom: 8px;
+        }
+
+        .duvida-final p {
+            color: var(--cinza);
+            margin: 0;
+        }
+
+
+        /* ================================
+           RESPONSIVO
+        ================================= */
+
+        @media (max-width: 768px) {
+
+            .mobi-header {
+                padding: 16px 20px;
+            }
+
+            .faq-container {
+                padding: 40px 15px;
+            }
+
+            .mockup-item {
+                width: 100%;
+                max-width: 300px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         CABEÇALHO MOBI
+    ================================= -->
+
+    <header class="mobi-header">
+
+        <div class="mobi-logo">
+            💡 MOBI
+        </div>
+
+        <a href="front.html" class="mobi-voltar">
+            ← Voltar
+        </a>
+
+    </header>
+
+
+    <main class="faq-container">
+
+
+        <!-- ================================
+             PERGUNTAS FREQUENTES
+        ================================= -->
+
+        <div class="faq-intro">
+
+            <span>❓</span>
+
+            <h1>Perguntas Frequentes</h1>
+
+            <p>
+                Encontre respostas para as principais dúvidas sobre
+                prestações de contas, reembolsos, viagens e valores vigentes.
+            </p>
+
+        </div>
+
+
+        <!-- ================================
+             REEMBOLSOS
+        ================================= -->
+
+        <section class="faq-categoria">
+
+            <h2>💰 Reembolsos</h2>
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Quantas vezes posso solicitar reembolso no Concur?
+                </button>
+
+                <div class="faq-resposta">
+                    Os reembolsos devem ser solicitados uma vez por mês.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Depois de aprovado, quando recebo o reembolso?
+                </button>
+
+                <div class="faq-resposta">
+                    Os reembolsos serão pagos todas as segundas e quartas-feiras.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Posso solicitar reembolso de lavanderia?
+                </button>
+
+                <div class="faq-resposta">
+                    Sim. Para hospedagens superiores a 5 dias, é permitido
+                    o reembolso de lavanderia, limitado a R$ 30 por dia.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Meu reembolso está em auditoria, o que faço?
+                </button>
+
+                <div class="faq-resposta">
+                    A análise pode levar até 5 dias. Caso seja identificada
+                    alguma divergência, você receberá um e-mail com as orientações.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             PRESTAÇÕES
+        ================================= -->
+
+        <section class="faq-categoria">
+
+            <h2>🧾 Prestações de Contas</h2>
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Café da manhã pode ser lançado como Coffee Break?
+                </button>
+
+                <div class="faq-resposta">
+                    Não. O café da manhã deve ser lançado como refeição,
+                    seguindo as regras da política de reembolso.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             MATERIAIS
+        ================================= -->
+
+        <section class="faq-categoria">
+
+            <h2>🖥️ Materiais e Equipamentos</h2>
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Posso solicitar reembolso de teclado, mouse, suporte ou celular?
+                </button>
+
+                <div class="faq-resposta">
+                    Não. Itens de TI não devem ser solicitados como reembolso.
+                    A solicitação deve ser realizada pelo almoxarifado.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Posso solicitar reembolso de material de escritório?
+                </button>
+
+                <div class="faq-resposta">
+                    A solicitação deve ser realizada pelos canais
+                    disponíveis para materiais e suprimentos.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             VEÍCULOS
+        ================================= -->
+
+        <section class="faq-categoria">
+
+            <h2>🚗 Veículos e Quilometragem</h2>
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Qual o valor da lavagem de veículos?
+                </button>
+
+                <div class="faq-resposta">
+                    O valor máximo é de R$ 160,00 para veículos FS,
+                    limitado a uma lavagem por mês.
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Posso solicitar reembolso de quilometragem de automóvel particular?
+                </button>
+
+                <div class="faq-resposta">
+                    Sim. O reembolso é permitido para deslocamentos relacionados
+                    ao trabalho, no valor de R$ 1,20 por quilômetro.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             VIAGENS
+        ================================= -->
+
+        <section class="faq-categoria">
+
+            <h2>✈️ Viagens</h2>
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Com quanto tempo de antecedência devo realizar uma reserva de viagem?
+                </button>
+
+                <div class="faq-resposta">
+
+                    <strong>Reserva de Viagens nacionais:</strong>
+                    10 dias.
+
+                    <br><br>
+
+                    <strong>Reserva de Viagens internacionais:</strong>
+                    20 dias.
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-pergunta" onclick="abrirFAQ(this)">
+                    Posso solicitar reembolso de passagens, hospedagens e locação de veículos?
+                </button>
+
+                <div class="faq-resposta">
+                    As reservas devem ser realizadas prioritariamente pela Voll.
+                    Exceções devem estar previamente alinhadas e autorizadas pela gestão.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             TABELA DE VALORES
+        ================================= -->
+
+        <section class="valores">
+
+            <h2>💰 Tabela de Valores Vigentes</h2>
+
+            <div class="tabela-wrapper">
+
+                <table class="tabela-valores">
+
+                    <thead>
+
+                        <tr>
+                            <th>Item</th>
+                            <th>Valor / Prazo</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Reserva de Viagens nacionais</td>
+                            <td><strong>10 dias</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Reserva de Viagens internacionais</td>
+                            <td><strong>20 dias</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Pequenos reparos veículos corporativos</td>
+                            <td><strong>R$ 1.000,00</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>KM veículo particular</td>
+                            <td><strong>R$ 1,20/km</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Refeição funcionário</td>
+                            <td><strong>R$ 160,00/dia</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Refeição de negócios entre funcionários</td>
+                            <td><strong>R$ 80,00/pessoa</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Lavagem de veículo pequeno</td>
+                            <td><strong>R$ 120,00</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Lavagem de veículo médio</td>
+                            <td><strong>R$ 140,00</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Lavagem de veículo grande</td>
+                            <td><strong>R$ 160,00</strong></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="tabela-wrapper">
+
+                <table class="tabela-valores">
+
+                    <thead>
+
+                        <tr>
+                            <th>Item</th>
+                            <th>Valor / Limite</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Frigobar</td>
+                            <td><strong>R$ 30,00/dia</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Lavanderia — hospedagem superior a 5 dias</td>
+                            <td><strong>R$ 30,00/dia</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Hospedagem nacional — gerentes/executivos — demais regiões</td>
+                            <td><strong>Até R$ 400,00/dia</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Hospedagem nacional — gerentes/executivos — São Paulo</td>
+                            <td><strong>Até R$ 450,00/dia</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Hospedagem nacional — demais colaboradores — demais regiões</td>
+                            <td><strong>Até R$ 300,00/dia</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>Hospedagem nacional — demais colaboradores — São Paulo</td>
+                            <td><strong>Até R$ 450,00/dia</strong></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <p class="observacao">
+                ¹ O limite de quilometragem deve seguir as regras e exceções
+                estabelecidas para cada equipe.
+            </p>
+
+        </section>
+
+
+        <!-- ========================================
+             DÚVIDAS SOBRE COMO ACESSAR
+        ======================================== -->
+
+        <section class="acesso" id="acesso">
+
+
+            <div class="titulo-acesso">
+
+                <div class="icone">🔐</div>
+
+                <h2>Dúvidas sobre como acessar</h2>
+
+                <p>
+                    Veja o MOBI Bot executando o passo a passo de acesso à plataforma.
+                </p>
+
+            </div>
+
+
+            <!-- ========================================
+                 GRUPO 1 — ACESSO SIMPLIFICADO
+            ======================================== -->
+
+            <div class="grupo-acesso">
+
+                <h3>Acesso simplificado</h3>
+
+                <div class="mockups">
+
+
+                    <!-- ETAPA 1 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status">
+                                ✓ Concluído
+                            </span>
+
+                        </div>
+
+
+                        <div class="browser-window">
+
+                            <div class="browser-top">
+
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+
+                                <div class="browser-address">
+                                    login.microsoftonline.com
+                                </div>
+
+                            </div>
+
+
+                            <div class="corporate-login">
+
+                                <div class="login-card">
+
+                                    <div class="microsoft-wordmark">
+
+                                        <span class="ms-squares">
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                        </span>
+
+                                        Microsoft
+
+                                    </div>
+
+
+                                    <h4>Entrar</h4>
+
+
+                                    <label class="login-label">
+                                        Email, telefone ou Skype
+                                    </label>
+
+
+                                    <input
+                                        class="login-field"
+                                        type="text"
+                                        value="novocolaborador@fs.agr.br"
+                                        readonly
+                                    >
+
+
+                                    <div class="login-link">
+                                        Não consegue acessar sua conta?
+                                        <br>
+                                        Precisa de ajuda para entrar?
+                                    </div>
+
+
+                                    <div class="login-button-area">
+
+                                        <button class="login-next">
+                                            Seguinte
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            1. Informe o e-mail corporativo
+                        </p>
+
+                    </div>
+
+
+                    <!-- ETAPA 2 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status">
+                                ✓ Concluído
+                            </span>
+
+                        </div>
+
+
+                        <div class="browser-window">
+
+                            <div class="browser-top">
+
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+
+                                <div class="browser-address">
+                                    login.fs.agr.br
+                                </div>
+
+                            </div>
+
+
+                            <div class="sso-screen">
+
+                                <div class="sso-card">
+
+                                    <div class="fs-logo">
+                                        FS
+                                    </div>
+
+
+                                    <div class="sso-title">
+                                        Acesso corporativo
+                                    </div>
+
+
+                                    <div class="sso-user">
+
+                                        <div class="sso-avatar">
+                                            JB
+                                        </div>
+
+                                        <div class="sso-email">
+                                            julio.barbosa@fs.agr.br
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="sso-description">
+                                        Utilize sua conta corporativa
+                                        para continuar o acesso.
+                                    </div>
+
+
+                                    <button class="sso-button">
+                                        Continuar com FS-SSO
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            2. Continue com o FS-SSO
+                        </p>
+
+                    </div>
+
+
+                    <!-- ETAPA 3 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status">
+                                ✓ Acesso liberado
+                            </span>
+
+                        </div>
+
+
+                        <div class="browser-window">
+
+                            <div class="browser-top">
+
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+
+                                <div class="browser-address">
+                                    app.concur.com
+                                </div>
+
+                            </div>
+
+
+                            <div class="sso-screen">
+
+                                <div class="sso-card">
+
+                                    <div class="fs-logo">
+                                        SAP Concur
+                                    </div>
+
+
+                                    <div class="sso-title">
+                                        Gerenciar despesas
+                                    </div>
+
+
+                                    <div class="sso-description">
+                                        Acesso realizado com sucesso.
+                                        Você já pode utilizar a plataforma
+                                        para consultar e gerenciar suas despesas.
+                                    </div>
+
+
+                                    <button class="sso-button">
+                                        Acessar
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            3. Acesso liberado
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================
+                 GRUPO 2 — AUTENTICAÇÃO
+            ======================================== -->
+
+            <div class="grupo-acesso">
+
+                <h3>Autenticação em dois fatores</h3>
+
+                <div class="mockups">
+
+
+                    <!-- ETAPA 1 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status">
+                                ✓ Concluído
+                            </span>
+
+                        </div>
+
+
+                        <div class="phone-area">
+
+                            <div class="phone">
+
+                                <div class="phone-screen">
+
+                                    <div class="phone-status">
+                                        <span>9:41</span>
+                                        <span>●●● 🔋</span>
+                                    </div>
+
+
+                                    <div class="auth-header">
+
+                                        <div class="auth-title">
+                                            Authenticator
+                                        </div>
+
+                                        <div class="auth-subtitle">
+                                            Microsoft
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="auth-body">
+
+                                        <div class="auth-account">
+
+                                            <div class="auth-account-header">
+
+                                                <div class="auth-avatar">
+                                                    FS
+                                                </div>
+
+                                                <div>
+
+                                                    <div class="auth-account-name">
+                                                        FS Agrisolutions
+                                                    </div>
+
+                                                    <div class="auth-account-email">
+                                                        julio.barbosa@fs.agr.br
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="auth-code-label">
+                                                Código de verificação
+                                            </div>
+
+                                            <div class="auth-code">
+                                                497 450
+                                            </div>
+
+                                            <div class="auth-timer">
+                                                Código válido por alguns segundos
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="auth-action">
+                                            🔔 Aprovar solicitação de entrada
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            1. Abra o Microsoft Authenticator
+                        </p>
+
+                    </div>
+
+
+                    <!-- ETAPA 2 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status">
+                                ✓ Concluído
+                            </span>
+
+                        </div>
+
+
+                        <div class="phone-area">
+
+                            <div class="phone">
+
+                                <div class="phone-screen">
+
+                                    <div class="phone-status">
+                                        <span>9:41</span>
+                                        <span>●●● 🔋</span>
+                                    </div>
+
+
+                                    <div class="add-account-screen">
+
+                                        <div class="add-account-header">
+                                            Adicionar conta
+                                        </div>
+
+
+                                        <div class="add-account-content">
+
+                                            <div class="add-account-title">
+                                                Que tipo de conta?
+                                            </div>
+
+
+                                            <div class="add-account-text">
+                                                Selecione o tipo de conta
+                                                que deseja adicionar ao
+                                                Authenticator.
+                                            </div>
+
+
+                                            <div class="account-option selected">
+
+                                                <span class="account-option-icon">
+                                                    🏢
+                                                </span>
+
+                                                <span>
+                                                    Conta corporativa ou de estudante
+                                                </span>
+
+                                            </div>
+
+
+                                            <div class="account-option">
+
+                                                <span class="account-option-icon">
+                                                    👤
+                                                </span>
+
+                                                <span>
+                                                    Conta pessoal
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            2. Selecione conta corporativa
+                        </p>
+
+                    </div>
+
+
+                    <!-- ETAPA 3 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status executando">
+                                ⏳ Executando
+                            </span>
+
+                        </div>
+
+
+                        <div class="phone-area">
+
+                            <div class="phone">
+
+                                <div class="phone-screen">
+
+                                    <div class="phone-status">
+                                        <span>9:41</span>
+                                        <span>●●● 🔋</span>
+                                    </div>
+
+
+                                    <div class="qr-screen">
+
+                                        <div class="qr-header">
+                                            Digitalizar código QR
+                                        </div>
+
+
+                                        <div class="qr-content">
+
+                                            <div class="qr-title">
+                                                Escaneie o código QR
+                                            </div>
+
+
+                                            <div class="qr-text">
+                                                Aponte a câmera do telefone
+                                                para o código apresentado
+                                                na tela do computador.
+                                            </div>
+
+
+                                            <div class="qr-pattern"></div>
+
+
+                                            <div class="qr-status">
+                                                Aguardando leitura do código...
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            3. Digitalize o QR Code
+                        </p>
+
+                    </div>
+
+
+                    <!-- ETAPA 4 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status">
+                                ✓ Concluído
+                            </span>
+
+                        </div>
+
+
+                        <div class="phone-area">
+
+                            <div class="phone">
+
+                                <div class="phone-screen">
+
+                                    <div class="phone-status">
+                                        <span>9:41</span>
+                                        <span>●●● 🔋</span>
+                                    </div>
+
+
+                                    <div class="auth-header">
+
+                                        <div class="auth-title">
+                                            Authenticator
+                                        </div>
+
+                                        <div class="auth-subtitle">
+                                            Microsoft
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="auth-body">
+
+                                        <div class="auth-account">
+
+                                            <div class="auth-account-header">
+
+                                                <div class="auth-avatar">
+                                                    FS
+                                                </div>
+
+                                                <div>
+
+                                                    <div class="auth-account-name">
+                                                        FS Agrisolutions
+                                                    </div>
+
+                                                    <div class="auth-account-email">
+                                                        julio.barbosa@fs.agr.br
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="auth-code-label">
+                                                Código de verificação
+                                            </div>
+
+
+                                            <div class="auth-code">
+                                                497 450
+                                            </div>
+
+
+                                            <div class="auth-timer">
+                                                Conta configurada
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="auth-action">
+                                            ✓ Autenticação configurada
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            4. Insira o código gerado
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================
+                 GRUPO 3 — ESQUECI MINHA SENHA
+            ======================================== -->
+
+            <div class="grupo-acesso">
+
+                <h3>Esqueci minha senha</h3>
+
+                <div class="mockups">
+
+
+                    <!-- ETAPA 1 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status">
+                                ✓ Concluído
+                            </span>
+
+                        </div>
+
+
+                        <div class="browser-window">
+
+                            <div class="browser-top">
+
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+
+                                <div class="browser-address">
+                                    login.microsoftonline.com
+                                </div>
+
+                            </div>
+
+
+                            <div class="recovery-screen">
+
+                                <div class="recovery-card">
+
+                                    <div class="microsoft-wordmark">
+
+                                        <span class="ms-squares">
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                        </span>
+
+                                        Microsoft
+
+                                    </div>
+
+
+                                    <div class="recovery-title">
+                                        Problemas para entrar?
+                                    </div>
+
+
+                                    <div class="recovery-text">
+                                        Se você esqueceu sua senha,
+                                        podemos ajudar a recuperar
+                                        o acesso à sua conta.
+                                    </div>
+
+
+                                    <button class="login-next">
+                                        Esqueci a senha
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            1. Selecione "Esqueci a senha"
+                        </p>
+
+                    </div>
+
+
+                    <!-- ETAPA 2 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status">
+                                ✓ Concluído
+                            </span>
+
+                        </div>
+
+
+                        <div class="browser-window">
+
+                            <div class="browser-top">
+
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+
+                                <div class="browser-address">
+                                    login.microsoftonline.com
+                                </div>
+
+                            </div>
+
+
+                            <div class="recovery-screen">
+
+                                <div class="recovery-card">
+
+                                    <div class="microsoft-wordmark">
+
+                                        <span class="ms-squares">
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                        </span>
+
+                                        Microsoft
+
+                                    </div>
+
+
+                                    <div class="recovery-title">
+                                        Recuperar sua conta
+                                    </div>
+
+
+                                    <div class="recovery-text">
+                                        Informe seu nome de usuário
+                                        para continuar.
+                                    </div>
+
+
+                                    <input
+                                        class="recovery-input"
+                                        type="text"
+                                        value="novocolaborador@fs.agr.br"
+                                        readonly
+                                    >
+
+
+                                    <button class="login-next">
+                                        Enviar
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            2. Informe o usuário
+                        </p>
+
+                    </div>
+
+
+                    <!-- ETAPA 3 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status">
+                                ✓ Processo concluído
+                            </span>
+
+                        </div>
+
+
+                        <div class="browser-window">
+
+                            <div class="browser-top">
+
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+
+                                <div class="browser-address">
+                                    login.microsoftonline.com
+                                </div>
+
+                            </div>
+
+
+                            <div class="success-screen">
+
+                                <div class="success-card">
+
+                                    <div class="success-icon">
+                                        ✓
+                                    </div>
+
+
+                                    <div class="success-title">
+                                        Solicitação enviada
+                                    </div>
+
+
+                                    <div class="success-text">
+                                        Enviamos as instruções para
+                                        recuperação da sua senha.
+                                        <br><br>
+                                        Verifique sua caixa de entrada.
+                                    </div>
+
+                                    <br>
+
+                                    <button class="login-next">
+                                        Voltar à página de acesso
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            3. E-mail de recuperação enviado
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================
+                 GRUPO 4 — DÚVIDAS SOBRE SENHAS
+            ======================================== -->
+
+            <div class="grupo-acesso">
+
+                <h3>Dúvidas sobre senhas</h3>
+
+                <div class="mockups">
+
+
+                    <!-- ETAPA 1 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status executando">
+                                ⏳ Executando
+                            </span>
+
+                        </div>
+
+
+                        <div class="browser-window">
+
+                            <div class="browser-top">
+
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+
+                                <div class="browser-address">
+                                    login.microsoftonline.com
+                                </div>
+
+                            </div>
+
+
+                            <div class="twofa-reset-screen">
+
+                                <div class="twofa-reset-card">
+
+                                    <div class="microsoft-wordmark">
+
+                                        <span class="ms-squares">
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                        </span>
+
+                                        Microsoft
+
+                                    </div>
+
+
+                                    <div class="twofa-icon">
+                                        🔐
+                                    </div>
+
+
+                                    <div class="twofa-title">
+                                        Redefinir autenticação
+                                    </div>
+
+
+                                    <div class="twofa-text">
+                                        Não é possível inserir o código
+                                        de autenticação?
+                                    </div>
+
+
+                                    <div class="twofa-validation">
+                                        ✓ Login e senha validados
+                                    </div>
+
+
+                                    <div class="twofa-warning">
+                                        Válido apenas se você trocou
+                                        ou perdeu o aparelho.
+                                    </div>
+
+
+                                    <button class="twofa-button">
+                                        Solicitar redefinição
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            1. Solicitar redefinição do 2FA
+                        </p>
+
+                    </div>
+
+
+                    <!-- ETAPA 2 -->
+
+                    <div class="mockup-item">
+
+                        <div class="mobi-bot-bar">
+
+                            <div class="mobi-bot-name">
+                                <span class="mobi-bot-icon">🤖</span>
+                                <span>MOBI Bot</span>
+                            </div>
+
+                            <span class="mobi-bot-status">
+                                ✓ Concluído
+                            </span>
+
+                        </div>
+
+
+                        <div class="browser-window">
+
+                            <div class="browser-top">
+
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+
+                                <div class="browser-address">
+                                    login.microsoftonline.com
+                                </div>
+
+                            </div>
+
+
+                            <div class="twofa-reset-screen">
+
+                                <div class="twofa-reset-card">
+
+                                    <div class="microsoft-wordmark">
+
+                                        <span class="ms-squares">
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                            <span class="ms-square"></span>
+                                        </span>
+
+                                        Microsoft
+
+                                    </div>
+
+
+                                    <div class="twofa-icon">
+                                        ✉
+                                    </div>
+
+
+                                    <div class="twofa-title">
+                                        E-mail de redefinição enviado
+                                    </div>
+
+
+                                    <div class="twofa-text">
+                                        Redefinir autenticação de dois fatores.
+                                    </div>
+
+
+                                    <div class="reset-email-box">
+
+                                        <div class="reset-email-icon">
+                                            📩
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Verifique sua caixa de entrada
+                                            </strong>
+
+                                            <span>
+                                                Um link para redefinir sua
+                                                autenticação foi enviado
+                                                para seu e-mail corporativo.
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="reset-validity">
+                                        ⏱ Link válido por <strong>24 horas</strong>
+                                    </div>
+
+
+                                    <button class="twofa-button">
+                                        Entendi
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="mockup-caption">
+                            2. E-mail de redefinição enviado
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================================
+             FINAL
+        ================================= -->
+
+        <div class="duvida-final">
+
+            <h3>Não encontrou sua dúvida?</h3>
+
+            <p>
+                Consulte os procedimentos internos ou procure o time
+                responsável para receber orientação.
+            </p>
+
+        </div>
