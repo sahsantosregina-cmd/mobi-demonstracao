@@ -2606,3 +2606,18 @@
             </p>
 
         </div>
+        </main>
+
+    <script>
+        function abrirFAQ(botao) {
+            const resposta = botao.nextElementSibling;
+
+            if (resposta && resposta.classList.contains("faq-resposta")) {
+                resposta.classList.toggle("aberta");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
